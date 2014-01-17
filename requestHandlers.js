@@ -39,7 +39,7 @@ function display(response, request) {
 	form.parse(request, function(error, fields, files) {
 		console.log("parsing done");
 		
-		exec("java -cp src MazeSolver "+fields.dimx+" "+fields.dimy, function(error, stdout, stderr) {
+		exec("sh target/bin/solver "+fields.dimx+" "+fields.dimy, function(error, stdout, stderr) {
 			
 		
 			var result = stdout.replace("\n", "\\n");
