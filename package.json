@@ -1,0 +1,30 @@
+{
+  "name": "web_maze",
+  "version": "0.0.0",
+  "description": "A web based implementation of the MicroMau5 maze solving code",
+  "main": "index.js",
+  "dependencies": {
+    "formidable": "~1.0.14"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ahadik/Mau5Maze.git"
+  },
+  "keywords": [
+    "micromouse",
+    "maze",
+    "java",
+    "node.js"
+  ],
+  "author": "Alexander Hadik",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahadik/Mau5Maze/issues"
+  },
+  "homepage": "https://github.com/ahadik/Mau5Maze"
+}
