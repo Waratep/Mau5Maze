@@ -42,10 +42,7 @@ function display(response, request) {
 		exec("sh target/bin/solver "+fields.dimx+" "+fields.dimy, function(error, stdout, stderr) {
 			
 		
-			var result = stdout.replace("\n", "\\n");
-			for(var i = 0; i<stdout.length; i++){
-				result = result.replace("\n", "\\n");
-			}
+			var result = stdout.replace(/(\r\n|\n|\r)/gm, "\\n");
 			var resultArray = stdout.split("/");
 			var mazeResult = '<html>'+
 				'<head>'+
