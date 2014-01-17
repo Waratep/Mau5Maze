@@ -39,9 +39,10 @@ function display(response, request) {
 	form.parse(request, function(error, fields, files) {
 		console.log("parsing done");
 		
-		exec("sh target/bin/solver "+fields.dimx+" "+fields.dimy, function(error, stdout, stderr) {
-			
-		
+		exec("sh target/bin/solver "+fields.dimx+" "+fields.dimy, {encoding: 'utf8', maxBuffer: 400*1024}, function(error, stdout, stderr) {
+			var result;
+			var resultArray;
+			setTimeout(console.log(stdout), 10000);
 			var result = stdout.replace(/(\r\n|\n|\r)/gm, "\\n");
 			var resultArray = stdout.split("/");
 			var mazeResult = '<html>'+
@@ -67,7 +68,6 @@ function display(response, request) {
 							'}'+
 						'}'+
 						'loopMaze();'+
-						'console.log("ASD");'+
 					'}'+
 				'</script>'+
 				'<link rel="stylesheet" type="text/css" href="style.css">'+
